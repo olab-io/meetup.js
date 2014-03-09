@@ -7,18 +7,18 @@ Where in some languages you need to declare a variable like:
 
 ```javascript
 
-	int myInt = 5;
-	// or...
-	String myString = "Hello World";
+int myInt = 5;
+// or...
+String myString = "Hello World";
 ```
 
 In JavaScript you simply use the var keyword:
 
 ```javascript
 
-	var myInt = 5;
-	// or...
-	var myString = "Hello World";
+var myInt = 5;
+// or...
+var myString = "Hello World";
 ```
 
 In JavaScript there are 8 variable types:
@@ -38,7 +38,7 @@ Booleans variables can be `true` or `false` __only__.
 
 ```javascript
 
-	var myBoolean = true;
+var myBoolean = true;
 ```
 
 ## Int
@@ -47,7 +47,7 @@ Int variables are whole numbers.
 
 ```javascript
 
-	var myInt = 5;
+var myInt = 5;
 ```
 
 ## Float
@@ -56,7 +56,7 @@ Float variables are numbers with decimal points (also called floating-point numb
 
 ```javascript
 
-	var myFloat = 5.5;
+var myFloat = 5.5;
 ```
 
 ## Char 
@@ -65,9 +65,9 @@ Chars are single characters. They can represent text, a number, or even unicode 
 
 ```javascript
 
-	var myChar = 's';
+var myChar = 's';
 ```
-__Note__: a `'5'` is different than a `5`.
+__Note__ that a `'5'` is different than a `5`.
 
 ## String
 
@@ -75,7 +75,7 @@ Strings are combined characters, they hold things like words or sentences.
 
 ```javascript
 
-	var myString = 'string';
+var myString = 'string';
 ```
 
 ## Array
@@ -89,14 +89,14 @@ practice and can lead to some hard-to-find bugs
 
 ```javascript
 
-	var myIntArray = [5, 10, 12, 14, 800];
-	var myStringArray = [
-						 "Ulysses",
-						 "The Great Gatsby",
-						 "1984",
-						 "Catcher in the Rye", 
-						 "A Clockwork Orange"
-						];
+var myIntArray = [5, 10, 12, 14, 800];
+var myStringArray = [
+					 "Ulysses",
+					 "The Great Gatsby",
+					 "1984",
+					 "Catcher in the Rye", 
+					 "A Clockwork Orange"
+					];
 ```
 
 Each value in an array is called an element. 
@@ -106,13 +106,13 @@ located. Array indexes start at `0` instead of `1`.
 
 ```javascript
 
-	// returns "Ulysses"
-	myStringArray[0];
-	
-	// returns "A Catcher in the Rye"
-	myStringArray[3];
-	
-	//etc...
+// returns "Ulysses"
+myStringArray[0];
+
+// returns "A Catcher in the Rye"
+myStringArray[3];
+
+//etc...
 ```
 
 Associative Arrays store values with a string index
@@ -123,18 +123,18 @@ last name.
 
 ```javascript
 
-	var myAssocArray = [];
-	myAssocArray['Thompson'] = 345;
-	myAssocArray['Johnson'] = 487;
-	myAssocArray['Wallace'] = 101;
-	
-	// returns 345
-	myAssocArray['Thompson'];
-	
-	// returns 101
-	myAssocArray['Wallace'];
-	
-	//etc...
+var myAssocArray = [];
+myAssocArray['Thompson'] = 345;
+myAssocArray['Johnson'] = 487;
+myAssocArray['Wallace'] = 101;
+
+// returns 345
+myAssocArray['Thompson'];
+
+// returns 101
+myAssocArray['Wallace'];
+
+//etc...
 ```
 ##Object
 
@@ -144,44 +144,44 @@ methods are like functions that __belong__ to an object.
 
 ```javascript
 
-	var myObject = {
-		property: "value";
-		method: function(){
-			// some code...
-		}
-	};
+var myObject = {
+	property: "value";
+	method: function(){
+		// some code...
+	}
+};
 ```
 
 Objects can be created all at once like this...
 
 ```javascript
 
-	var myCar = {
-		
-		make: "Subaru",
-		model: "Legacy",
-		type: "Station Wagon",
-		year: 1992,
-		color: "champagne",
-		offRoad: false,
-		drive: function(){
-			// code to drive
-		},
-		doCoolTrick: function(){
-			// code to look like a badass
-		}
-	};
+var myCar = {
+	
+	make: "Subaru",
+	model: "Legacy",
+	type: "Station Wagon",
+	year: 1992,
+	color: "champagne",
+	offRoad: false,
+	drive: function(){
+		// code to drive
+	},
+	doCoolTrick: function(){
+		// code to look like a badass
+	}
+};
 ```
 
 or separately like this...
 
 ```javascript
 
-	var myCar = {};
-	myCar.make = "Subaru";
-	myCar.model = "Legacy";
-	myCar.year = 1992;
-	// etc...
+var myCar = {};
+myCar.make = "Subaru";
+myCar.model = "Legacy";
+myCar.year = 1992;
+// etc...
 ```
 
 An object's properties and methods are
@@ -190,11 +190,11 @@ assigned them above
 
 ```javascript
 
-	// returns "Subaru"
-	myCar.make;
-	
-	// runs the code for that badass trick
-	myCar.doCoolTrick();
+// returns "Subaru"
+myCar.make;
+
+// runs the code for that badass trick
+myCar.doCoolTrick();
 ```
 
 ## Function
@@ -204,12 +204,12 @@ This can be confusing, but also very helpful.
 
 ```javascript
 
-	var myFunction = function(parameter1, parameter2, etc...){
-		// code...
-	}
-	
-	// run the function
-	myFunction();
+var myFunction = function(parameter1, parameter2, etc...){
+	// code...
+}
+
+// run the function
+myFunction();
 ```
 
 Cool, thats all of them. There are some programming books

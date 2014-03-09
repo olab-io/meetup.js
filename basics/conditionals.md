@@ -1,6 +1,7 @@
 # Conditionals
 
-Conditionals are chunks of logic in code.
+Conditionals are chunks of logic in code. Think of
+them like the way that a program makes decisions.
 In most programming languages they appear in the 
 form of `if`, `if else`, and `else` statements.
 Each condition to be evaluated goes inside the 
@@ -12,14 +13,14 @@ Here is an idea of how conditionals work...
 
 ```javascript
 
-	if (someConditionIsTrue) {
-		// run this code
-	} else if (someOtherConditionIsTrue) {
-		// run this other code
-	} else { 
-		// run this code if the "if" and "if else" statements
-		// weren't true
-	}
+if (someConditionIsTrue) {
+	// run this code
+} else if (someOtherConditionIsTrue) {
+	// run this other code
+} else { 
+	// run this code if the "if" and "if else" statements
+	// weren't true
+}
 ```
 
 `if` statements don't need to have the
@@ -30,20 +31,20 @@ Sometimes you just need an `if`:
 
 ```javascript
 	
-	if (someConditionIsTrue) {
-		// code...
-	}
+if (someConditionIsTrue) {
+	// code...
+}
 ```
 
 Sometimes you need an `if` and an `else` only.
 
 ```javascript
 
-	if (someConditionIsTrue) {
-		// code...
-	} else {
-	   // code...
-	}
+if (someConditionIsTrue) {
+	// code...
+} else {
+   // code...
+}
 ```
 
 Sometimes you need multiple `if else` statements
@@ -53,15 +54,15 @@ in the list only runs if the ones above it have failed.
 
 ```javascript
 
-	if (condition1IsTrue) {
-	
-	} else if (condition2IsTrue) {
-	
-	} else if (condition3IsTrue) {
-	
-	} else if (condition4IsTrue) {
-	
-	} //etc...
+if (condition1IsTrue) {
+
+} else if (condition2IsTrue) {
+
+} else if (condition3IsTrue) {
+
+} else if (condition4IsTrue) {
+
+} //etc...
 ```
 
 __Note__ that you can't have an `else if` or `else` without
@@ -72,13 +73,13 @@ Lets see a real `if` statement in practice.
 
 ```javascript
 
-	int myInt = 5;
-	
-	if (myInt == 5) {
-		// run if myInt is 5
-	} else {
-		// run anytime myInt is not 5
-	}
+int myInt = 5;
+
+if (myInt == 5) {
+	// run if myInt is 5
+} else {
+	// run anytime myInt is not 5
+}
 ```
 
 Wait! What is that weird `==` operator?
@@ -94,14 +95,14 @@ Lets do some more...
 
 ```javascript
 
-	var itsMyBirthday = true;
-	var message;
-	
-	if (myBoolean == true) {
-		message = "Happy Birthday!";
-	} else {
-		message = "Just a regular day. Unless its some other holiday like Holloween or something."
-	}
+var itsMyBirthday = true;
+var message;
+
+if (myBoolean == true) {
+	message = "Happy Birthday!";
+} else {
+	message = "Just a regular day. Unless its some other holiday like Holloween or something."
+}
 ```
 
 Because conditionals actually evaluate whatever expression is
@@ -117,14 +118,14 @@ inside of them. Notable operators are:
 
 ```javascript
 
-	var hour = 8;
-	var timeOfDay;
-	
-	if (hour >= 12) {
-		timeOfDay = "Afternoon or night";
-	} else {
-		timeOfDay = "Morning";
-	}
+var hour = 8;
+var timeOfDay;
+
+if (hour >= 12) {
+	timeOfDay = "Afternoon or night";
+} else {
+	timeOfDay = "Morning";
+}
 ```
 
 "And" and "or" statements can also be included inside of a conditional.
@@ -134,17 +135,17 @@ Say you want to evaluate whether one thing is true __and__ another thing is fals
 
 ```javascript
 
-	var hour = 14;
-	var timeOfDay;
-	
-	if (hour >= 12 &&
-	    hour < 16) {
-	    timeOfDay = "Afternoon";
-	} else if (hour >= 16) {
-		timeOfDay = "Night";
-	} else {
-		timeOfDay = "Morning";
-	}
+var hour = 14;
+var timeOfDay;
+
+if (hour >= 12 &&
+    hour < 16) {
+    timeOfDay = "Afternoon";
+} else if (hour >= 16) {
+	timeOfDay = "Night";
+} else {
+	timeOfDay = "Morning";
+}
 ```
 
 The `&&` operator is used to require that __both__ expressions are `true` for the condition to pass.
@@ -153,13 +154,13 @@ Similarly, the `||` (or) operator can be used to require that __at least one__ o
 
 ```javascript
 
-	var hour = 14;
-	var itsEleven = false;
-	
-	if (hour == 11 ||
-	    hour == 23) {
-	    itsEleven = true;
-	}
+var hour = 14;
+var itsEleven = false;
+
+if (hour == 11 ||
+    hour == 23) {
+    itsEleven = true;
+}
 ```
 
 Sometimes you might see conditionals code written
@@ -171,8 +172,8 @@ for clarity.
 
 ```javascript
 
-	if (someConditionIsTrue) myInt = 1;
-	else myInt = 0;
+if (someConditionIsTrue) myInt = 1;
+else myInt = 0;
 ```
 
 Other times you might see an expression being evaluated without an `== true`. This is because any expression inside of the conditional's parentheses is evaluated as a boolean, and thus `if(myBoolean == true)` and `if(myBoolean == false)` are equivalent to `if(myBoolean)` and `if(!myBoolean)`. You are more than welcome to continue to use `== true` or `== false` for clarity or to help you remember what is actually going on in the code. Just remember that some code that you read may use the shorthand version.
