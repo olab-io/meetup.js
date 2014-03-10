@@ -101,4 +101,4 @@ function myFunction(){
 
 Lets get started looking at some JavaScript basics in the [basics folder](../basics) located in the root directory (folder) of this repository.
 
-For simplicity, I have also created an [empty project](../examples/empty) inside the repository's example folder. I'd recommend making a copy of it each time you want to start a new exercise or project so that you always have a blank template to work from :).
+For simplicity, I have also created an [empty project](../examples/empty) inside the repository's [examples folder](../examples). I'd recommend making a copy of it each time you want to start a new exercise or project so that you always have a blank template to work from :).
