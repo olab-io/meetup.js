@@ -86,3 +86,19 @@ prints
 ```
 
 ## camelCase and Naming Conventions
+
+If you have ever seen any JavaScript, you have probably noticed tons of words that `lookLikeThis`. That's because JavaScript variables and function names cannot contain spaces. For this reason, JavaScript adopts the `camelCase` naming convention where class names (don't worry about what that means) all variable and function names are written in lowercase, and if they are more than one word long, the first letter in each next word is capitalized. It ends up looking like this:
+
+```javascript
+
+var myVar = "some string of text";
+function myFunction(){
+	// some code...
+}
+```
+
+## Getting Started
+
+Lets get started looking at some JavaScript basics in the [basics folder](../basics) located in the root directory (folder) of this repository.
+
+For simplicity, I have also created an [empty project](../examples/empty) inside the repository's example folder. I'd recommend making a copy of it each time you want to start a new exercise or project so that you always have a blank template to work from :).
