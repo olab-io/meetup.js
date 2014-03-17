@@ -5,7 +5,7 @@
 A function is an encapsulated process. It is a "block of code that will be executed when 
 someone calls it."
 
-##Primitive Functions
+###Primitive Functions
 * mathematical operators
 * console.log
 * String.toUpperCase
@@ -82,4 +82,45 @@ function Person(h, w){
 var tallGuy = new Person(10,3);
 ```
 
+All javascript functions return a value. If the return value is unspecified, the function 
+will return `undefined`. To illustrate this idea, let's remake a very familiar function.
 
+```javascript
+//returns undefined
+function plus(numb1,numb2){
+	console.log(numb1 + numb2);
+}
+
+//returns the sum of numb1 and numb2
+function plus(numb1,numb2){
+	return numb1 + numb2;
+}
+
+//more robust and versatile plus()
+function plus(){
+	var sum = 0;
+	for(var i =0; i<arguments.length; i+=1){
+		sum += arguments[i];
+	}
+	return sum;
+}
+```
+
+Functions can be called anonymously, that is, without a name. Such functions are called as
+soon as they are defined.
+
+```javascript
+//Syntactically, they have two forms
+(function(){
+	//code...
+})()
+
+(function(){
+	//code...
+}())
+```
+
+Why use an anonymous function
+* Short-term use
+* Naming is not needed
+* Take advantage of function scope (closure)
