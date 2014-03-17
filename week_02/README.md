@@ -1,5 +1,18 @@
 # Week 2
 
+## Cool JavaScript Things
+
+[![Eye Demo Screenshot](images/eye_demo.png)](http://www.vill.ee/eye/)
+
+- (3D) [WebGL Eye Demo](http://www.vill.ee/eye/)
+- (3D) [Face Substitution](http://auduno.github.io/clmtrackr/examples/facesubstitution.html)
+- (3D) [Three.js](http://threejs.org/)
+- (2D) [Drawing Emulator](http://zetamaze.com/draw.php)
+- (2D & 3D) [Chrome Experiments](http://www.chromeexperiments.com/)
+- (Electronics) [openROV](https://www.kickstarter.com/projects/openrov/openrov-the-open-source-underwater-robot)
+
+Now for some less cool but equally as important (especially to learn how to do the cool things) things...
+
 ## The DOM
 
 The Document Object Model (DOM) is a programming interface for HTML and XML documents. It provides a structured representation of the document and it defines a way that the structure can be accessed from programs so that they can change the document structure, style and content. The DOM provides a representation of the document as a structured group of nodes and objects that have properties and methods. Essentially, it connects web pages to scripts or programming languages. More info [where the above was taken from](https://developer.mozilla.org/en-US/docs/DOM/DOM_Reference/Introduction).
