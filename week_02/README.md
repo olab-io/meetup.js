@@ -145,3 +145,6 @@ A full list of CSS selectors can be found [here](http://www.w3schools.com/cssref
 
 Download and open this jQuery [Star Wars example](../examples/star_wars) to get a feel for some jQuery/JavaScript DOM manipulation in action! It uses jQuery to easily handle the switching of images and text as well as the slider's opacity control.
 
+## More Basics
+
+Check out the [Loops](../basics/loops.md) and [Functions](../basics/functions.md) basics sections for more info on helpful javascript and programming concepts.
