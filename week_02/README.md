@@ -42,11 +42,12 @@ document.getElementById("nameOfID");
 
 For instance, we could easily change the text on an html page by selecting a specific elements id. This time lets embed the javascript code inside of the html page itself change the text in the `id=bar` paragraph 1 second after the page loads:
 
-```javascript
+```html
 <html>
 
   <head>
   	<script type="text/javascript">
+      
       //when the window has loaded
       window.onload = function(){
 
@@ -56,6 +57,7 @@ For instance, we could easily change the text on an html page by selecting a spe
         }, 1000);
        
       }
+      
     </script>
   </head>
   
@@ -98,4 +100,42 @@ Together, the HTML Document Object Model and JavaScript make up an Application P
 
 Because manipulating the DOM is actually quite tedious with its arbitrary long and arduous method names and broken down low level API, jQuery was created to make DOM manipulation as easy as "using a nice little library that fixes all of your DOM problems."
 
-jQuery is a library that extends and simplifies the regular JavaScript DOM API and comes with tons of helper helper methods.
+jQuery is a library that extends and simplifies the regular JavaScript DOM API and comes with tons of helper methods. To use it simple add this (or a link to whatever version you want to use) to your html page:
+
+```html
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" >
+// load jQuery 
+</script>
+```
+
+Just make sure that you load it before you start to use it. For now just put it inside of your `<head>` tag.
+
+jQuery uses a `$` character to define its own [namespace](http://en.wikipedia.org/wiki/Namespace). For now all that you need to know is that that means that whenever we use a jQuery object or method we prepend it with `$`. Like this:
+
+```javascript
+$("#idName").text("some text");
+```
+
+The string inside of the `$()` parenthesis is a CSS selector used to query the DOM. This means that the javascript for the above `id="bar"` example could easily be rewritten using jQuery like this:
+
+```javascript
+
+// when the document is ready. Better than window.onload.
+$(document).ready(function(){
+
+	setTimeout(function(){
+       $("#bar").text("I changed this text 1 second after the page loaded.");
+    }, 1000);
+});
+
+```
+
+This time we used jQuery's `$(document).ready()` function instead of `window.onload`. That is because `$(document).ready()` occurs as early as possible after the document has loaded (more [here](http://stackoverflow.com/questions/3698200/window-onload-vs-document-ready)). Whenever you have code that you want to run when the page is ready, put it inside of a `$(document).ready()`.
+
+A full list of CSS selectors can be found [here](http://www.w3schools.com/cssref/css_selectors.asp), however you can get started knowing just the following:
+
+- Element name: Simply the name of the HTML element that you want to select (e.g. `div`). This returns an array of jQuery objects that represent each element of that name.
+- Class: Elements with a class can be targeted by prepending the class name with a `.` character (e.g. `#custom-class`). Because multiple html elements can have the same class name this target often returns an array of jQuery objects.
+- Id: Elements with an id can be targeted by prepending the id name with a `#` character (e.g. `#custom-id`). Because there can only be one id for each html element this type of target is guaranteed to return only 1 jQuery result object.
+
+
