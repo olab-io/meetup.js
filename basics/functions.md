@@ -120,7 +120,7 @@ soon as they are defined.
 }())
 ```
 
-Why use an anonymous function
+Why use an anonymous function?
 * Short-term use
 * Naming is not needed
 * Take advantage of function scope (closure)
