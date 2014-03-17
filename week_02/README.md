@@ -139,3 +139,9 @@ A full list of CSS selectors can be found [here](http://www.w3schools.com/cssref
 - Id: Elements with an id can be targeted by prepending the id name with a `#` character (e.g. `#custom-id`). Because there can only be one id for each html element this type of target is guaranteed to return only 1 jQuery result object.
 
 
+## Example
+
+![Star Wars Screenshot](images/star_wars_screenshot.png)
+
+Download and open this jQuery [Star Wars example](../examples/star_wars) to get a feel for some jQuery/JavaScript DOM manipulation in action! It uses jQuery to easily handle the switching of images and text as well as the slider's opacity control.
+
