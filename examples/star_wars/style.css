@@ -1,0 +1,17 @@
+body {
+	width: 50%;
+	margin: auto;
+}
+
+#image {
+	width: 100%;
+	margin: 70px auto 0px auto; /* top right bottom left*/
+}
+
+#opacity-slider {
+	float: right;
+}
+
+.clickable {
+	cursor: pointer;
+}

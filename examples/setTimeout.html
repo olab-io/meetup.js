@@ -1,0 +1,29 @@
+<html>
+
+  <head>
+  	<script type="text/javascript">
+      //when the window has loaded
+      window.onload = function(){
+
+        setTimeout(function(){
+           var bar = document.getElementById("bar");
+           bar.innerHTML = "I changed this text 1 second after the page loaded.";
+        }, 1000);
+       
+      }
+    </script>
+  </head>
+  
+  <body>
+  	<p>
+  		This Paragraph doesn't have any id.
+  	</p>
+  	<p id="foo">
+  		This Paragraph doesn't have the id that we are selecting.
+  	</p>
+  	<p id="bar">
+  		This one does, it will be changed.
+  	</p>
+  </body>
+  
+</html>
