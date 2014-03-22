@@ -15,7 +15,8 @@ var quotes = [
 	'"Mos Eisley spaceport. You will never find a more wretched hive of scum and villainy."',
 	'"I\'m Luke Skywalker, I\'m here to rescue you."',
 	'"Don\'t call me a mindless philosopher, you overweight glob of grease."',
-]
+];
+
 
 $(document).ready(function(){
 	
@@ -36,6 +37,7 @@ $(document).ready(function(){
 		});
 	});
 });
+
 
 function getRandomElement(array) {
 	var randomIndex = Math.floor(Math.random() * array.length);

@@ -5,11 +5,10 @@ JavaScript is "loosly" or "weakly" typed, which means
 that variable types do not need to be explicitly declaired.
 Where in some languages you need to declare a variable like:
 
-```javascript
-
+```cpp
 int myInt = 5;
 // or...
-String myString = "Hello World";
+string myString = "Hello World";
 ```
 
 In JavaScript you simply use the var keyword:
@@ -59,7 +58,7 @@ Float variables are numbers with decimal points (also called floating-point numb
 var myFloat = 5.5;
 ```
 
-## Char 
+## Char
 
 Chars are single characters. They can represent text, a number, or even unicode characters.
 
@@ -94,12 +93,12 @@ var myStringArray = [
 					 "Ulysses",
 					 "The Great Gatsby",
 					 "1984",
-					 "Catcher in the Rye", 
+					 "Catcher in the Rye",
 					 "A Clockwork Orange"
 					];
 ```
 
-Each value in an array is called an element. 
+Each value in an array is called an element.
 Elements can be accessed using the "index",
 or position in the array, where that value is
 located. Array indexes start at `0` instead of `1`.
@@ -157,7 +156,7 @@ Objects can be created all at once like this...
 ```javascript
 
 var myCar = {
-	
+
 	make: "Subaru",
 	model: "Legacy",
 	type: "Station Wagon",
@@ -185,7 +184,7 @@ myCar.year = 1992;
 ```
 
 An object's properties and methods are
-accessed using "dot syntax" just like we 
+accessed using "dot syntax" just like we
 assigned them above
 
 ```javascript
@@ -213,7 +212,7 @@ myFunction();
 ```
 
 Cool, thats all of them. There are some programming books
-that are entirely devoted to variable types, so if all of 
+that are entirely devoted to variable types, so if all of
 this doesn't make since just yet don't sweat it. The nice
 thing to know is that you just learned __every__ variable type
 in JavaScript!
