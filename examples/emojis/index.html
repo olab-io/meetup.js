@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Emoji Example</title>
+		<meta charset="utf-16"/>
+		<link rel="stylesheet" href="style.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" >// jQuery </script>
+		<script src="underscore.js" >// underscore </script>
+		<script src="emojify.js" >// emojify </script>
+		<script src="emoji_text.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(document).ready(function(){
+				
+				var numEmoji = 1000;
+				var size = 30;
+				var minTime = 100; // in millis
+				var maxTime = 500;
+
+				for(var i = 0; i < numEmoji; i++) {
+					
+					var img = document.createElement("img");
+					img.src = getImagePath(_.sample(emojiText, 1)[0]);
+					$(img).css({
+						width: size + "px",
+						height: size + "px"
+					});
+					$("body").append(img);
+					switchEmoticon($(img));
+				}
+
+				function switchEmoticon(imageObj) {
+					imageObj[0].src = getImagePath(_.sample(emojiText, 1));
+					imageObj[0].onload = function(){
+						setTimeout(function(){ 
+							switchEmoticon(imageObj) // recall this function. This is called recursion.
+						}, _.random(minTime, maxTime));
+					}
+				}
+
+				function getImagePath(name) {
+					return "images/emoji/" + name + ".png";
+				}
+			});
+		</script>
+	</head>
+
+	<body>
+	</body>
+</html>

@@ -39,7 +39,7 @@ There are three separate statements __separated by semicolons__ inside of a `for
 
 Here is an example of a common `for` loop:
 
-```javascript 
+```javascript
 
 for (var i = 0; i < 100; i++) {
 	// code...
@@ -52,18 +52,18 @@ For loops are great for iterating through each element in an array:
 
 ```javascript
 var superheroes = [
-					"Batman", 
-					"Superman", 
-					"Wonder Women", 
-					"Wolverine", 
+					"Batman",
+					"Superman",
+					"Wonder Women",
+					"Wolverine",
 					"Spiderman",
 					"The Flash",
 					"Captain America"
 				   ];
-				   
+
 for (var i = 0; i < superheroes.length; i++) {
 	var superhero = superheroes[i];
-	
+
 	if (superhero == "The Flash") {
 		console.log(superheroes[i] + " is very fast.");
 	} else {
@@ -132,7 +132,6 @@ While loops are much simpler than `for` and `for/in` loops, however they are rar
 while (someCondition) {
 	// the code inside of here loops until someCondition is false
 }
-
 ```
 
 Here is a while loop that counts to 100:
@@ -143,7 +142,6 @@ var i = 1;
 while (i <= 100) {
 	console.log(i);
 }
-
 ```
 
 When using `while` loops, you must be very careful to make sure that the condition being evaluated each loop will eventually return false. Otherwise you will create an infinite loop that can crash your browser (or impertinently, your computer).

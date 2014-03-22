@@ -16,7 +16,6 @@ function cheesyNameSwap(firstName, lastName) {
 	var newLastName = firstName.charAt(0) + lastName.substring(1);
 	return newFirstName + " " + newLastName;
 }
-
 ```
 
 The above code outputs the following to the console:
@@ -43,7 +42,6 @@ var cheesyLastName3 = "Frank".charAt(0) + "Candler".substring(1);
 console.log(cheesyFirstName1 + " " + cheesyLastName1);
 console.log(cheesyFirstName2 + " " + cheesyLastName2);
 console.log(cheesyFirstName3 + " " + cheesyLastName3);
-
 ```
 
 Not only is this practice cumbersome and lengthy but it also makes it difficult if we want to change the way that we are transforming the names. To do this we would have to update our algorithm in three separate places rather than inside of one tidy function.
@@ -57,7 +55,6 @@ In order to use a function, it must first be declared. This process occurs when 
 function myFunctionName() {
 	// code...
 }
-
 ```
 
 In older programming languages, functions had to be defined before they were first used (called). In JavaScript you can define a function anywhere in your code. For this reason, most function declarations nowadays are actually grouped together with all other functions that are used in the program and placed at the bottom of the `.js` file.
@@ -87,7 +84,6 @@ function parameterExample(param1, param2, param3, etc...) {
 	console.log(param2);
 	console.log(param3);
 }
-
 ```
 
 We can now easily print three strings to the console like this:
@@ -147,7 +143,6 @@ Anonymous functions can be a bit confusing, and to the best of my knowledge are 
 (function(){
 	// code...
 })(); // the last parenthesis actually calls the function.
-
 ```
 
 Perhaps more importantly, JavaScript uses anonymous functions often when passing functions as parameters to other functions in the form of callbacks. Callbacks are often used for passing code from a function into an event handler. Below is an example of an anonymous function used with jQuery's `$(document).ready()`.

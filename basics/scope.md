@@ -21,7 +21,6 @@ logGlobal();
 function logGlobal() {
 	console.log(myGlobalVar);
 }
-
 ```
 
 ```
