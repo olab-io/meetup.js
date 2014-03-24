@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+	<style type="text/css">
+
+	</style>
+</head>
+
+<body>
+	<!--Create a canvas that will allow us to draw onto the screen.
+	////Give it the id 'canvas' so we can refrence it in the javascript
+	////For more info on using the canvas, check out: 
+	//// http://www.w3schools.com/tags/ref_canvas.asp
+	//// https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Canvas_tutorial
+	-->
+	<canvas id="canvas"></canvas>
+</body>
+
+<script>
+
+	//Grab the canvas element
+	var canvas = document.getElementById("canvas");
+
+	//Grab the context of the canvas
+	var context = canvas.getContext("2d");
+
+	//Set it's width and height to fill the entire window
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+
+
+	function lineTimeout(i,seg,mill){
+
+		//Initialize time to the 'mill' parameter. If 'mill' is undefined, make 'time' 1000.
+		var time = mill || 1000;
+
+		//Calculate the length of a segment
+		var segment = canvas.height/seg;
+
+		//Calculate the current yposition for the line this cycle
+		var ypos = segment * i;
+
+		//if the yposition goes off the page (or reach the end of the page), log a message and stop the function 
+		if(ypos >= canvas.height){
+			console.log("Done");
+			return;
+		}
+
+		//if the above if statement is not satisfied, set a timeout. In an amount of time defined by 
+		// the 'time' variable (2nd param), call the anonymous function (1st paraM)
+		setTimeout(function(){
+
+			drawLine(0,ypos,canvas.width,ypos,i); 
+
+			//call itself again, incrementing the 1st parameter and leaving the others the same.
+			lineTimeout(i+1,seg,mill);
+
+		}, time);
+
+		};
+
+	function drawLine(startx,starty,endx,endy){
+		//Tell the context that you are about to draw the time
+		context.beginPath();
+		//Move the pen to a start position, defined bt moveTo()'s parameters 
+		context.moveTo(startx,starty);
+		//Make a line from the start position to a new position, defined by lineTo()'s parameters
+		context.lineTo(endx,endy);
+		//Render the lines to the screen
+		context.stroke();
+	}
+
+	lineTimeout(1,300,6);
+
+</script>
