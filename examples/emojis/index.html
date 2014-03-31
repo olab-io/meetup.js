@@ -9,7 +9,7 @@
 		<script src="underscore.js" >// underscore </script>
 		<script src="emojify.js" >// emojify </script>
 		<script src="emoji_text.js"></script>
-		<script type="text/javascript" charset="utf-8">
+		<script type="text/javascript">
 
 			var numEmoji = 1000;
 			var size = 30;
@@ -18,36 +18,39 @@
 
 			$(document).ready(function(){
 
-				for(var i = 0; i < numEmoji; i++) {
-
+				for (var i = 0; i < numEmoji; i++) {
+					
 					var img = document.createElement("img");
-					img.src = getImagePath(_.sample(emojiText, 1)[0]);
-					$(img).css({
-						width: size + "px",
-						height: size + "px"
-					});
+					switchEmoji(img);
 					$("body").append(img);
-					switchEmoticon($(img));
+					
 				}
-
 			});
 
-			function switchEmoticon(imageObj) {
-				imageObj[0].src = getImagePath(_.sample(emojiText, 1));
-				imageObj[0].onload = function(){
+			function switchEmoji(img) {
+
+				$(img).css({
+					width: "30px",
+					height: "30px"
+				});
+
+				img.src = getImagePath(_.sample(emojiText));
+				img.onload = function() {
 					setTimeout(function(){
-						switchEmoticon(imageObj) // recall this function. This is called recursion.
+						switchEmoji(img);
 					}, _.random(minTime, maxTime));
 				}
 			}
 
-			function getImagePath(name) {
-				return "images/emoji/" + name + ".png";
+			function getImagePath(imageName) {
+				return "images/emoji/" + imageName + ".png"
 			}
-			
 		</script>
 	</head>
 
 	<body>
+		<img>
+		<img>
+		<img>
 	</body>
 </html>

@@ -1,0 +1,15 @@
+img {
+	width: 64px;
+	height: 64px;
+}
+
+#controls {
+	width: 40%;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+input {
+	width: 100%;
+	margin: 10px;
+}

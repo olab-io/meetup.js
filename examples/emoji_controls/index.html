@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Emoji Example</title>
+		<meta charset="utf-16"/>
+		<link rel="stylesheet" href="style.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" >// jQuery </script>
+		<script src="underscore.js" >// underscore </script>
+		<script src="emojify.js" >// emojify </script>
+		<script src="emoji_text.js"></script>
+		<script type="text/javascript">
+
+			var numEmoji = 1000;
+			var size = 64;
+			var minTime = 100; // in millis
+			var maxTime = 500;
+
+			$(document).ready(function(){
+
+				for (var i = 0; i < numEmoji; i++) {
+					
+					var img = document.createElement("img");
+					switchEmoji(img);
+					$("body").append(img);
+				}
+
+				$('#size').change(function(){
+					var range = this;
+					$('img').css({
+						width: $(this).val(),
+						height: $(this).val()
+					});
+				});
+			});
+
+			function switchEmoji(img) {
+
+				var minTime = parseInt($('#refresh-min').val());
+				var maxTime = parseInt($('#refresh-max').val());
+				img.src = getImagePath(_.sample(emojiText));
+				img.onload = function() {
+					setTimeout(function(){
+						switchEmoji(img);
+					}, _.random(50, maxTime));
+				}
+			}
+
+			function getImagePath(imageName) {
+				return "images/emoji/" + imageName + ".png"
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<div id="controls">
+			<input type="range" id="size" name="size" min="10" max="64" value="64">
+			<input type="range" id="refresh-max" name="refreshMin" value="500" min="50" max="5000">
+		</div>
+	</body>
+</html>

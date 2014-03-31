@@ -1,0 +1,23 @@
+img {
+	width: 40px;
+	height: 40px;
+}
+
+#screen {
+	margin: 45px auto;
+	width: 800px;
+}
+
+#selections {
+	width: 90%;
+	margin: auto;
+}
+
+#selections img {
+	cursor: pointer;
+}
+
+form {
+	width: 100px;
+	margin: 0px auto 20px auto;
+}

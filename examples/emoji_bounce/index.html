@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Emoji Example</title>
+		<meta charset="utf-16"/>
+		<link rel="stylesheet" href="style.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" >// jQuery </script>
+		<script src="underscore.js" >// underscore </script>
+		<script src="emojify.js" >// emojify </script>
+		<script src="emoji_names.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				var ballImage = 'images/emoji/cd.png';
+				var backgroundImage = 'images/emoji/black_circle.png';
+				var change = 'background';
+
+				var width = 20;
+				var height = 10;
+
+				var ballX = _.random(1, width - 1);
+				var ballY = _.random(1, height - 1);
+
+				var xDir = 1;
+				var yDir = 1;
+
+				var frameRate = 100;
+
+				for (var y = 0; y < height; y++){
+					
+					var div = document.createElement('div');
+					div.id = y;
+
+					for (var x = 0; x < width; x++) {
+						
+						var img = document.createElement('img');
+						
+						if (x == ballX && y == ballY) {
+							img.src = ballImage;
+						} else {
+							img.src = backgroundImage;
+						}
+
+						$(div).append(img);
+					}
+
+					$('#screen').append(div);
+				}
+
+				// add the "selection" emoji
+				for (var i = 0; i < emojiNames.length; i++) {
+					var img = document.createElement('img');
+					img.src = 'images/emoji/' + emojiNames[i];
+					
+					//register click event
+					$(img).click(function(){
+
+						
+						if (change == 'ball') ballImage = $(this).attr('src');
+						else {
+							backgroundImage = $(this).attr('src');
+							$('#screen img').each(function(){
+								$(this).attr('src', backgroundImage);
+							});
+						}
+					});
+
+					$('#selections').append(img);
+				}
+
+				$("input:radio[name='select']").click(function() {
+				    change = $(this).val();
+				});
+
+				// this function is called each frame
+				function animate(){
+					
+					$('#' + ballY).children()[ballX].src = backgroundImage;
+	
+					if (ballX >= width - 1|| ballX <= 0) {
+						xDir = -xDir;
+					}
+
+					if (ballY >= height - 1|| ballY <= 0) {
+						yDir = -yDir;
+					}
+
+					ballX += 1 * xDir;
+					ballY += 1 * yDir;
+
+					$('#' + ballY).children()[ballX].src = ballImage;
+					
+				}
+
+				// start the animation
+				setInterval(animate, frameRate);
+
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="screen"></div>
+		<form>
+			<input type="radio" name="select" value="ball">Ball<br>
+			<input type="radio" name="select" value="background" checked>Background
+		</form>
+		<div id="selections">
+		</div>
+	</body>
+</html>
