@@ -8,7 +8,3 @@ Lets build some more emoji demos! We'll start off by adding some sliders to cont
 
 We will also build another emoji demo that replicates a ball bouncing on a 2D screen. In this demo, the user will be able to customize the emoji that represent both the ball and the background. Lets code inside the [`lets_build_emoji_bounce`](lets_build_emoji_bounce) folder. You can view the completed demo [here](../examples/emoji_bounce)
 
-![Controls Screenshot](images/controls.png)
-
-![Bounce Screenshot](images/bounce.png)
-
