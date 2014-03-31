@@ -2,7 +2,7 @@
 
 ![Controls Screenshot](images/controls.png)
 
-Lets build some more emoji demos! We'll start off by adding some sliders to control the size and refresh rate of the [emoji example](../examples/emoji) that we built last week. Let's write our code in this week's [`lets_build_emoji_controls`](lets_build_emoji_controls) template. You can see the final code [here](../examples/emoji_controls).
+Lets build some more emoji demos! We'll start off by adding some sliders to control the size and refresh rate of the [emoji example](../examples/emojis) that we built last week. Let's write our code in this week's [`lets_build_emoji_controls`](lets_build_emoji_controls) template. You can see the final code [here](../examples/emoji_controls).
 
 ![Bounce Screenshot](images/bounce.png)
 
