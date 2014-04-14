@@ -11,6 +11,7 @@ var ctx = canvas.getContext('2d');
 var width = window.innerWidth;
 var height = window.innerHeight;
 var animatedPixels = [];
+var repelPoints = [];
 var pixelSize = 10;
 
 //in-memory canvas. Never rendered to the browser.
@@ -52,17 +53,24 @@ video.addEventListener('canplay', function(e) {
 init();
 
 video.addEventListener('play', function(e){
-	setInterval(animate, 1000/12);
+	setInterval(animate, 1000/10);
 }, false);
 
-$('#canvas').click(function(){
-	console.log();
-	init();
+$('#canvas').click(function(e){
+	repelPoints.push(getMousePos(e));
 });
+
+document.onkeyup = function (e) {
+    e = e || window.event;
+    if(e.keyCode == 32) {
+    	init();
+    }; 
+}
 
 //--------------------------------------------------------------
 
 function init(){
+	repelPoints = [];
 	for (var y = 0; y < height; y += pixelSize) {
 		animatedPixels[y] = [];
 		for (var x = 0; x < width; x += pixelSize) {
@@ -96,6 +104,12 @@ function getPixel(x, y, imageData){
 	}
 }
 
+// returns [x, y]
+function getMousePos(evt) {
+	var rect = canvas.getBoundingClientRect();
+	return [evt.clientX - rect.left, evt.clientY - rect.top];
+}
+
 function AnimatedPixel(x, y, size){
 	
 	var maxTargetDistance = 20;
@@ -106,11 +120,14 @@ function AnimatedPixel(x, y, size){
 	// 				 getRandom(y - maxTargetDistance, y + maxTargetDistance)]);
 	this.target = $V([width/2, 
 	 				 height/2]);
-	this.speed = getRandom(1, 5);
+	this.speed = getRandom(1, 4);
 }
 
 AnimatedPixel.prototype.update = function(pixel){
-	this.pos = this.pos.add(this.pos.subtract(this.target).toUnitVector().multiply(this.speed));
+	for (var i = 0; i < repelPoints.length; i++) {
+		// var speed = mapRange(this.pos.distanceFrom($V(repelPoints[i])), 0, 30, 0, 10);
+		this.pos = this.pos.add(this.pos.subtract($V(repelPoints[i])).toUnitVector().multiply(this.speed));
+	}
 }
 
 AnimatedPixel.prototype.draw = function(pixel){
@@ -127,8 +144,8 @@ function getRandom(min, max){
 	return Math.random() * (max - min) + min;
 }
 
-function mapRange(val, minX, minY, maxX, maxY) {
-	return ((value - minX)/(maxX - minX)) * (maxY - minY) + minY;
+function mapRange(value, low1, high1, low2, high2){
+    return low2 + (high2 - low2) * ((value - low1) / (high1 - low1));
 }
 
   
