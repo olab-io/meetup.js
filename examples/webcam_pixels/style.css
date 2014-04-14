@@ -1,0 +1,8 @@
+video { 
+   position:absolute;
+   visibility:hidden;
+}
+
+#canvas {
+	cursor: pointer;
+}
