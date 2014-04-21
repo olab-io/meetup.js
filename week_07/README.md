@@ -8,3 +8,4 @@ Browser extensions give added functionality to your web browser. Once installed,
 
 ![Screenshot](http://brannondorsey.com/files/minimumwage/images/screenshot.png)
 
+We will be building the rebuilding the [Amazon Minimum Wage](https://github.com/brannondorsey/minimumwage) browser extension this week. This extension replace prices on [Amazon](http://amazon.com) with time spent earning minimum wage in your state (via Geo lookup). This week's template files can be found in [`lets_build_browser_extension/`](lets_build_browser_extension/).
