@@ -1,4 +1,4 @@
-#Weekly JavaScript Meet-ups at SAIC
+# Weekly JavaScript Meet-ups at SAIC
 This repo contains the materials, notes, and example code from our weekly JavaScript meet-ups.
 
 The first few weeks of our Meet-ups will be devoted to covering [the basics](basics). An 30 min to 1hr of each meet-up will also be designated to individual help and 1-on-1 help with personal projects.
@@ -21,7 +21,7 @@ All code snippets and demos from our meet-ups can be found in the examples folde
 
 ## Meet-up Breakdowns
 
-###Week 1 - 2
+### Week 1 - 2
 
 __What is JavaScript?__
 
